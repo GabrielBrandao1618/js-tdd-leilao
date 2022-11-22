@@ -11,8 +11,13 @@ export class Auction {
   _auctioneer: Auctioneer
 
   constructor(bids: Bid[], product: Product, date: Date, auctioneer: Auctioneer) {
-    this._bids = bids
     this._product = product
+    bids.forEach(bid => {
+      if(bid.value >= this._product.minPrice){
+        return this._bids.push(bid)
+      } 
+      throw new Error('Cannot make a bid that is lower than the product min price')
+    })
     this._date = date
     this._auctioneer = auctioneer
   }

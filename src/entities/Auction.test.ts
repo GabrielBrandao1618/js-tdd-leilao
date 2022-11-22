@@ -34,4 +34,14 @@ describe('Testes da classe de leilão', () => {
     expect(a1.getBidsAverage()).toBe(34000)
     expect(a1.getGreaterBids(2)).toEqual([32000, 40000])
   })
+  it('Deve falhar caso os lances forem menores que o valor mínimo', () => {
+    expect(() => new Auction(
+      [
+        new Bid(5000, new User('Gabriel')),
+      ],
+      p1,
+      new Date(),
+      auc1
+    )).toThrowError()
+  })
 })
