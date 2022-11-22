@@ -1,0 +1,17 @@
+{
+  "name": "js-tdd-example",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "scripts": {
+    "test": "vitest"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^18.11.9",
+    "typescript": "^4.9.3",
+    "vitest": "^0.25.3"
+  },
+  "dependencies": {
+    "date-fns": "^2.29.3"
+  }
+}
